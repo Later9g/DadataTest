@@ -17,15 +17,15 @@
 
 1. **Клонируйте репозиторий**:
     ```bash
-    git clone <[URL_репозитория](https://github.com/Later9g/DadataTest)>
-    cd <Systems\Api\DadataTest.Api>
+    git clone https://github.com/Later9g/DadataTest
+    cd Systems\Api\DadataTest.Api
     ```
 
 2. **Настройте файл конфигурации**:
    В `appsettings.json` укажите настройки Dadata:
    ```json
    "DadataSettings": {
-       "BaseUrl": "https://dadata.ru/api/clean/address",
+       "BaseUrl": "https://cleaner.dadata.ru/api/v1/clean/address",
        "Token": "ваш_токен",
        "Secret": "ваш_секретный_ключ"
    }

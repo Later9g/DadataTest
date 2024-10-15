@@ -1,5 +1,6 @@
 using DadataTest.Api;
 using DadataTest.Api.Configuration;
+using DadataTest.Common.Exceptions;
 using DadataTest.Services.Settings;
 using DadataTest.Settings;
 
@@ -13,6 +14,7 @@ builder.AddAppLogger(mainSettings, logSettings);
 
 var services = builder.Services;
 
+services.AddExceptionHandler<GlobalExceptionHandler>();
 services.AddSingleton(dadataSettings);
 services.AddAppCors();
 services.RegisterAppServices();
@@ -22,6 +24,7 @@ services.AddAppHealthChecks();
 
 var app = builder.Build();
 
+app.UseExceptionHandler();
 app.UseAppCors();
 app.MapControllers();
 app.UseAppHealthChecks();

@@ -12,6 +12,7 @@ public static class Bootstrapper
             .AddMainSettings()
             .AddLogSettings()
             .AddDadataSettings()
+            .AddProblemDetails()
             .AddHttpClient()
             .addAdresService();
         
